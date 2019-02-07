@@ -49,6 +49,7 @@ SpealLength|SepalWidth|PetalLength|PetalWidth|Species
 7.2|3|5.8|1.6|virginica
 7.9|3.8|6.4|2|virginica
 6.3|2.8|5.1|1.5|virginica
+
 versicolor와 virginica 분류에 실패한 4개의 데이터이다.\
 1번과 4번, 두개의 데이터를 보면 다른 종류의 꽃임에도 값의 차이가 매우 적음.
 
