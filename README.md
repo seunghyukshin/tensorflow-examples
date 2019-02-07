@@ -21,6 +21,14 @@ inverse_transform
 ![figure_1](https://user-images.githubusercontent.com/31649100/52390948-51809b80-2ade-11e9-82f0-2c91a2f8c9f3.png)\
 ovearll에 해당하는 value값들 중 **최댓값 혹은 평균값**을 택한다면 데이터를 다루기 쉬울 것으로 보임.
 
+---
+### 개선결과
+Value값에 log10을 취한 뒤 선형구조로 만들어줌\
+![figure_1](https://user-images.githubusercontent.com/31649100/52399564-01b2cc00-2b00-11e9-8af2-6dc891309d48.png)\
+
+![22](https://user-images.githubusercontent.com/31649100/52399748-7128bb80-2b00-11e9-8698-2687bbfd0914.png)\
+cost가 0.18대로 만들었지만 원하는 선모양대로 나오지 않음.
+
 
 # 
 
