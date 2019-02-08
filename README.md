@@ -2,15 +2,18 @@
 
 ## 1. 피파19 선수들의 능력치를 이용한 Linear regression 예제
 ### 가설
-Age(나이),Overall(통합 능력치),Potential(잠재 능력치)를 입력하여 Value(몸값)을 예측한다.
+    Age(나이),Overall(통합 능력치),Potential(잠재 능력치)를 입력하여 Value(몸값)을 예측한다.
+
 
 ### 결과
- 예측 할 수 없는 값
+    예측 할 수 없는 값
+
+---
 
 ### 실패 요인
-가설이 잘 못 되었다.\
-나이,오버롤,포텐셜 외에 변수를 추가해준다 하더라도 예측했던 값이 나오지 않을 가능성 높음\
-**Linear하다는 근거가 없이 MLR식에 넣었기 때문**
+    가설이 잘 못 되었다.
+    나이,오버롤,포텐셜 외에 변수를 추가해준다 하더라도 예측했던 값이 나오지 않을 가능성 높음
+    Linear하다는 근거가 없이 MLR식에 넣었기 때문
 
 ### 개선 방향
 - normalized하여 cost값을 줄인다.\
@@ -23,12 +26,24 @@ ovearll에 해당하는 value값들 중 **최댓값 혹은 평균값**을 택한
 
 ---
 ### 개선결과
-Value값에 log10을 취한 뒤 선형구조로 만들어줌\
-![figure_1](https://user-images.githubusercontent.com/31649100/52399564-01b2cc00-2b00-11e9-8af2-6dc891309d48.png)\
+    Value값에 log10을 취한 뒤 선형구조로 만드는 방법을 택함
+![why](https://user-images.githubusercontent.com/31649100/52454746-4a19ca80-2b90-11e9-8508-d3fe8d4b21aa.png)
 
-![22](https://user-images.githubusercontent.com/31649100/52399748-7128bb80-2b00-11e9-8698-2687bbfd0914.png)\
-cost가 0.18대로 만들었지만 원하는 선모양대로 나오지 않음.
+![22](https://user-images.githubusercontent.com/31649100/52399748-7128bb80-2b00-11e9-8698-2687bbfd0914.png)
 
+    cost를 0.18대로 만들었지만 원하는 선모양대로 나오지 않음.
+
+---
+### RMSE(root mean squared error)를 사용(기존 cost식에 root만)
+     오히려 cost 값은 커졌지만 원하는 선모양이 나왔다.
+
+![aa](https://user-images.githubusercontent.com/31649100/52455008-784bda00-2b91-11e9-821f-e5c60d54f9dc.png)
+
+![default](https://user-images.githubusercontent.com/31649100/52454823-b399d900-2b90-11e9-94a1-1151c75fa921.png)
+
+> loss마다 아웃라이어에 취약한 경우가 있다.
+> 
+> loss 값 자체는 scale에 영향을 받는거라 절대적인 값 차이는 크게 의미가 없다.
 
 # 
 

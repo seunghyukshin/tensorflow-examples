@@ -43,10 +43,10 @@ W = tf.Variable(tf.random_normal([1, 1]), name='weight')
 b = tf.Variable(tf.random_normal([1]), name='bias')
 
 hypothesis = tf.matmul(X, W) + b
-cost = tf.reduce_mean(tf.square(hypothesis - Y))
+cost = tf.sqrt(tf.reduce_mean(tf.square(hypothesis - Y)))
 
 # Training
-optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.00001)
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.000018)
 train = optimizer.minimize(cost)
 '''
 prediction = tf.arg_max(hypothesis, 1)
@@ -58,7 +58,7 @@ sess.run(tf.global_variables_initializer())
 
 for step in range(2001):
     w_val, cost_val, hy_val, _ = sess.run([W, cost, hypothesis, train],
-                                          feed_dict={X: data_poten, Y: data_value})
+                                          feed_dict={X: data_overall, Y: data_value})
     if step % 10 == 0:
         print(step, "Cost:", cost_val, "W", w_val, "\n Hypothesis:\n", hy_val)
 
@@ -85,7 +85,7 @@ ax1.set_ylabel('potential-overall')
 ax2.plot(data_overall, data_value, 'ro')
 ax2.set_xlabel('overall')
 ax2.set_ylabel('value')
-#ax2.plot(train_data_x, sess.run(W) * train_data_x + sess.run(b))
+ax2.plot(data_overall, sess.run(W) * data_overall + sess.run(b))
 ax3.plot(data_poten, data_value, 'ro')
 ax3.set_xlabel('poten')
 ax3.set_ylabel('value')
