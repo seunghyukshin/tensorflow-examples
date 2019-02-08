@@ -49,17 +49,20 @@ ovearll에 해당하는 value값들 중 **최댓값 혹은 평균값**을 택한
  https://alphago.pe.kr/entry/4-TensorFlow%EC%99%80-%EB%86%80%EC%9E%90-Softmax-Classification
 
 ### Data Set
-    X: SepalLength, SepalWidth, PetalLength, PetalWidth (4개 항목)\
+    X: SepalLength, SepalWidth, PetalLength, PetalWidth (4개 항목)
     Y: Species - setosa, versicolor, virginica (3종류)
 
-    training set : 25, 25, 25 (50)\
-    validation set: 10, 10, 10 (30)\
+    training set : 25, 25, 25 (50)
+    validation set: 10, 10, 10 (30)
     test   set : 15, 15, 15 (45)
 
 ### 결과
-![1](https://user-images.githubusercontent.com/31649100/52391818-93abdc00-2ae2-11e9-9ae4-e38969e4e66a.png)\
-    learning rate=0.5로 training 결과 0.029의 cost\
-![2](https://user-images.githubusercontent.com/31649100/52391784-78d96780-2ae2-11e9-8c77-2e08070f0dfa.png)\
+![1](https://user-images.githubusercontent.com/31649100/52391818-93abdc00-2ae2-11e9-9ae4-e38969e4e66a.png)
+
+    learning rate=0.5로 training 결과 0.029의 cost
+
+![2](https://user-images.githubusercontent.com/31649100/52391784-78d96780-2ae2-11e9-8c77-2e08070f0dfa.png)
+
     validation set에서 4개의 data 분류 실패함
 
 ### 실패요인
@@ -70,7 +73,7 @@ SpealLength|SepalWidth|PetalLength|PetalWidth|Species
 7.9|3.8|6.4|2|virginica
 6.3|2.8|5.1|1.5|virginica
 
-    versicolor와 virginica 분류에 실패한 4개의 데이터이다.\
+    versicolor와 virginica 분류에 실패한 4개의 데이터이다.
     1번과 4번, 두개의 데이터를 보면 다른 종류의 꽃임에도 값의 차이가 매우 적음.
 
 ### 개선 방향
