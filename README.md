@@ -77,6 +77,19 @@ SpealLength|SepalWidth|PetalLength|PetalWidth|Species
     1번과 4번, 두개의 데이터를 보면 다른 종류의 꽃임에도 값의 차이가 매우 적음.
 
 ### 개선 방향
-    validation set을 이용한 training을 추가할 것.
+- validation set을 이용한 training을 추가할 것.
+- 강좌로 배운 내용을 적용해 볼 것
+- 4개의 불순한 데이터에 대한 처리방법 고려
 
+### Neural Net, xavier_initializer(), Drop out, AdamOptimizer 적용
+    W shape를 [4,3]에서 [4,16] [16,256] [256,256] [256,256] [256,16] [16,3]로 바꿨을 때는 정확도가 오히려 이전보다 낮게나옴.
+    
+    Why?
+[4,256] [256,256] [256,256] [256,256] [256,256] [256,3]으로 변경했을 때의 결과
 
+![a](https://user-images.githubusercontent.com/31649100/52547477-5e1d3080-2e0b-11e9-9b0a-af05f7ef88de.png)
+
+![b](https://user-images.githubusercontent.com/31649100/52547498-8b69de80-2e0b-11e9-87cf-6cc5bafe3da6.png)
+
+    성능은 향상되었지만 테스트 결과는 이전과 같다.
+    
