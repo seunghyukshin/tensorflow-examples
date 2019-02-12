@@ -43,7 +43,12 @@ W = tf.Variable(tf.random_normal([1, 1]), name='weight')
 b = tf.Variable(tf.random_normal([1]), name='bias')
 
 hypothesis = tf.matmul(X, W) + b
-cost = tf.sqrt(tf.reduce_mean(tf.square(hypothesis - Y)))
+#cost = tf.sqrt(tf.reduce_mean(tf.square(hypothesis - Y)))
+cost =tf.div(tf.add(tf.reduce_sum(tf.square(Y - hypothesis)), tf.multiply(0.2, tf.reduce_sum(tf.square(W)))), 2*17955)
+#cost = tf.add(tf.reduce_mean(tf.square(hypothesis-Y)), 0.5 * tf.reduce_sum(tf.square(W)))
+
+#tf.div(tf.add(tf.reduce_sum(tf.square(Y - y_model)), tf.mul(reg_lambda, tf.reduce_sum(tf.square(w)))), 2*x_train.size)
+
 
 # Training
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.000018)
@@ -94,3 +99,11 @@ ax3.plot(data_poten, sess.run(W) * data_poten + sess.run(b))
 # plt.legend()
 
 plt.show()
+
+''' 
+regularization & data split
+https://yujuwon.tistory.com/entry/TENSORFLOW-Regularization
+
+validation set
+https://www.kaggle.com/helmehelmuto/protein-sequence-classification-with-hmmlearn
+'''
