@@ -41,6 +41,27 @@ ovearll에 해당하는 value값들 중 **최댓값 혹은 평균값**을 택한
 > loss마다 아웃라이어에 취약한 경우가 있다.
 > 
 > loss 값 자체는 scale에 영향을 받는거라 절대적인 값 차이는 크게 의미가 없다.
+---
+### Regularization
+    종종 선형의 모양이 overfitting 되는 경향이 있어 regularization 해줄 필요가 생김.
+[출처] https://yujuwon.tistory.com/entry/TENSORFLOW-Regularization
+
+![20190212_171228](https://user-images.githubusercontent.com/31649100/52621010-9004c480-2ee9-11e9-944e-5397ee20d375.png)
+
+![20190212_171601](https://user-images.githubusercontent.com/31649100/52621140-e7a33000-2ee9-11e9-9059-883ef24b6ca3.png)
+
+    rmse를 빼고 regularization을 취해주었다. lambda값은 0.2로 주었다.
+    cost가 상당히 낮아졌다.
+
+    overfitting 되는 문제가 아직 있음.
+    18000여개의 data를 모두 training set으로 취해서 주황색으로 칠한 부분으로 overfitting.
+    → data split 해줄것.
+
+### Data split
+[출처] https://yujuwon.tistory.com/entry/TENSORFLOW-Regularization
+
+
+
 
 # 
 
